@@ -268,7 +268,7 @@ const Plans = () => {
             >
               {/* Popular Badge */}
               {plan.popular && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <div className="absolute top-0 left-6 -translate-y-1/2 z-20 transition-transform duration-300 group-hover:-translate-y-4">
                   <div className="bg-gradient-to-r from-premium-gold to-premium-orange text-black px-4 py-1.5 text-sm sm:text-base rounded-full font-bold shadow-lg flex items-center">
                     <Star className="w-5 h-5 mr-2" />
                     Most Popular
@@ -362,7 +362,7 @@ const Plans = () => {
           className="text-center mb-16"
         >
           <h3 className="text-4xl sm:text-5xl font-black text-white mb-4">Loved by Coders Worldwide</h3>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             See what our successful students have to say about their journey with TUF Plus.
           </p>
 
