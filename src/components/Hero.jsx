@@ -92,7 +92,7 @@ const Hero = React.memo(() => {
   return (
     <section 
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-5 sm:pt-10"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-5 sm:pt-13"
       onMouseMove={handleMouseMove}
     >
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-premium-gold/5 via-premium-orange/10 to-premium-red/5 animate-pulse"></div>
