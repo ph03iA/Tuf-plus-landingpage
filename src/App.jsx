@@ -50,6 +50,7 @@ function App() {
         <Footer />
       </Suspense>
       
+      {/* Vercel Analytics - tracks page views and user interactions */}
       <Analytics />
     </div>
   )
