@@ -69,10 +69,10 @@ const CTA = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-premium-gold via-premium-amber to-premium-orange text-black font-bold mb-8 glow-premium relative overflow-hidden">
+          <div className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-gradient-to-r from-premium-gold via-premium-amber to-premium-orange text-black font-bold mb-8 glow-premium relative overflow-hidden">
             <div className="absolute inset-0 shimmer"></div>
-            <Gift className="w-6 h-6 mr-3 relative z-10" />
-            <span className="relative z-10">🔥 LIMITED TIME OFFER - 50% OFF</span>
+            <Gift className="w-5 h-6 sm:w-6 mr-2 sm:mr-3 relative z-10" />
+            <span className="relative z-10 text-sm sm:text-base">🔥 LIMITED TIME OFFER - 50% OFF</span>
             <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-premium-red to-premium-orange rounded-full animate-ping"></div>
           </div>
         </motion.div>
@@ -86,7 +86,7 @@ const CTA = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
+            <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
               Your Dream Job{' '}
               <span className="gradient-text-premium relative">
                 Awaits
@@ -94,7 +94,7 @@ const CTA = () => {
               </span>
             </h2>
             
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
               Don't let another opportunity slip away. Join thousands of successful engineers 
               who transformed their careers with TakeUForward PLUS. Start your journey today 
               and land your dream job in the next 90 days.
@@ -114,7 +114,7 @@ const CTA = () => {
                   <div className="w-8 h-8 rounded-full bg-tuf-orange/20 flex items-center justify-center text-tuf-orange">
                     {benefit.icon}
                   </div>
-                  <span className="text-white font-medium">{benefit.text}</span>
+                  <span className="text-white font-medium text-base sm:text-lg">{benefit.text}</span>
                 </motion.div>
               ))}
             </div>
@@ -130,7 +130,7 @@ const CTA = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="group relative bg-gradient-to-r from-premium-gold via-premium-amber to-premium-orange text-black px-10 py-5 rounded-full font-bold text-xl flex items-center justify-center glow-premium transition-all duration-300 overflow-hidden"
+                className="group relative bg-gradient-to-r from-premium-gold via-premium-amber to-premium-orange text-black px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-lg sm:text-xl flex items-center justify-center glow-premium transition-all duration-300 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-premium-orange to-premium-red opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 group-hover:text-white transition-colors duration-300">Start Free Trial</span>
@@ -140,7 +140,7 @@ const CTA = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="glass-premium border border-white/40 text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-white/20 transition-all duration-300 relative overflow-hidden group"
+                className="glass-premium border border-white/40 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-lg sm:text-xl hover:bg-white/20 transition-all duration-300 relative overflow-hidden group"
               >
                 <span className="relative z-10">Schedule Demo</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
@@ -179,13 +179,13 @@ const CTA = () => {
             className="space-y-8"
           >
             {/* Countdown Timer */}
-            <div className="glass-premium rounded-3xl p-10 text-center relative overflow-hidden">
+            <div className="glass-premium rounded-3xl p-6 sm:p-10 text-center relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-premium-gold/10 to-premium-orange/10"></div>
-              <h3 className="text-3xl font-bold text-white mb-8 relative z-10">
-                <Clock className="inline w-8 h-8 mr-3 text-premium-gold animate-pulse" />
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-8 relative z-10">
+                <Clock className="inline w-7 sm:w-8 h-7 sm:h-8 mr-3 text-premium-gold animate-pulse" />
                 Offer Expires In
               </h3>
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 xs:grid-cols-4 gap-4">
                 {[
                   { value: timeLeft.days, label: 'Days' },
                   { value: timeLeft.hours, label: 'Hours' },
@@ -197,29 +197,27 @@ const CTA = () => {
                     initial={{ scale: 0.8 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className="bg-gradient-to-br from-premium-gold via-premium-amber to-premium-orange rounded-2xl p-6 relative overflow-hidden group hover:scale-105 transition-transform duration-300"
+                    className="bg-gradient-to-br from-premium-gold via-premium-amber to-premium-orange rounded-2xl p-4 sm:p-6 relative overflow-hidden group hover:scale-105 transition-transform duration-300"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                    <div className="text-3xl font-black text-black relative z-10">{time.value.toString().padStart(2, '0')}</div>
-                    <div className="text-premium-red font-bold text-sm relative z-10">{time.label}</div>
+                    <p className="text-3xl sm:text-4xl font-black text-black mb-1">{time.value}</p>
+                    <p className="text-xs sm:text-sm font-bold text-black/80 uppercase tracking-wider">{time.label}</p>
                   </motion.div>
                 ))}
               </div>
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((stat, index) => (
+            <div className="grid grid-cols-2 gap-8 text-center">
+              {stats.map(stat => (
                 <motion.div
                   key={stat.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="glass rounded-lg p-6 text-center hover:scale-105 transition-transform duration-300"
                 >
-                  <div className="text-2xl font-bold gradient-text mb-2">{stat.value}</div>
-                  <div className="text-gray-400 text-sm">{stat.label}</div>
+                  <p className="text-3xl sm:text-4xl font-black gradient-text-premium mb-2">{stat.value}</p>
+                  <p className="text-base sm:text-lg text-gray-300">{stat.label}</p>
                 </motion.div>
               ))}
             </div>

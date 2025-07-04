@@ -168,7 +168,7 @@ const Features = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={titleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl md:text-6xl font-black gradient-text-premium mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-black gradient-text-premium mb-6"
           >
             Premium Features for
             <br />
@@ -179,7 +179,7 @@ const Features = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={titleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             Transform your coding interview preparation with our comprehensive platform designed by industry experts
           </motion.p>
@@ -191,7 +191,7 @@ const Features = () => {
           variants={containerVariants}
           initial="hidden"
           animate={featuresVisible ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 auto-rows-fr"
         >
           {features.map((feature, index) => (
             <motion.div

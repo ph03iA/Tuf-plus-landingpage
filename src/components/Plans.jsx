@@ -234,7 +234,7 @@ const Plans = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={titleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl md:text-6xl font-black gradient-text-premium mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-black gradient-text-premium mb-6"
           >
             Invest in Your
             <br />
@@ -245,7 +245,7 @@ const Plans = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={titleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             Choose the perfect plan for your interview preparation journey. All plans include 30-day money-back guarantee.
           </motion.p>
@@ -257,7 +257,7 @@ const Plans = () => {
           variants={containerVariants}
           initial="hidden"
           animate={plansVisible ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 auto-rows-fr"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24"
         >
           {plans.map((plan, index) => (
             <motion.div
@@ -268,18 +268,12 @@ const Plans = () => {
             >
               {/* Popular Badge */}
               {plan.popular && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                  animate={plansVisible ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 20 }}
-                  transition={{ duration: 0.6, delay: plan.delay + 0.3 }}
-                  className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-30"
-                >
-                  <div className="bg-gradient-to-r from-premium-gold to-premium-orange px-6 py-2 rounded-full text-black font-bold text-sm flex items-center space-x-2 glow-premium shadow-xl">
-                    <Sparkles className="w-4 h-4" />
-                    <span>Most Popular</span>
-                    <Sparkles className="w-4 h-4" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                  <div className="bg-gradient-to-r from-premium-gold to-premium-orange text-black px-4 py-1.5 text-sm sm:text-base rounded-full font-bold shadow-lg flex items-center">
+                    <Star className="w-5 h-5 mr-2" />
+                    Most Popular
                   </div>
-                </motion.div>
+                </div>
               )}
 
               <motion.div
@@ -316,68 +310,12 @@ const Plans = () => {
                   </p>
 
                   {/* Pricing Section */}
-                  <div className="mb-6">
-                    {!plan.enterprise ? (
-                      <motion.div
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={plansVisible ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
-                        transition={{ duration: 0.6, delay: plan.delay + 0.4 }}
-                        className="text-center"
-                      >
-                        {/* Original & Regular Prices */}
-                        {plan.originalPrice && (
-                          <div className="mb-2">
-                            <span className="text-sm text-gray-500 line-through mr-2">Original: {plan.originalPrice}</span>
-                            <span className="text-sm text-gray-400 line-through">Regular: {plan.regularPrice}</span>
-                          </div>
-                        )}
-                        
-                        {/* Discount Badge */}
-                        {plan.discount && (
-                          <div className="inline-block bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-1 rounded-full text-sm font-bold mb-3">
-                            {plan.discount}
-                          </div>
-                        )}
-                        
-                        {/* Offer Price */}
-                        <div className="mb-2 relative z-20">
-                          <span className="text-sm text-gray-300 block drop-shadow-md">Offer Price:</span>
-                          <span className={`text-4xl font-black drop-shadow-lg ${plan.popular ? 'gradient-text-premium' : 'text-white'}`}>
-                            {plan.price}
-                          </span>
-                        </div>
-                        
-                        {/* Coupon */}
-                        {plan.coupon && (
-                          <div className="mb-2 relative z-20">
-                            <span className="text-sm text-gray-300 drop-shadow-md">Coupon: </span>
-                            <span className="text-premium-gold font-bold drop-shadow-lg">{plan.coupon}</span>
-                          </div>
-                        )}
-                        
-                        {/* Validity */}
-                        <div className="flex items-center justify-center mb-2 relative z-20">
-                          <span className="text-sm text-gray-300 mr-2 drop-shadow-md">Validity:</span>
-                          <span className="text-white font-semibold drop-shadow-lg">{plan.period}</span>
-                          {plan.lifetime && (
-                            <span className="ml-2 bg-gradient-to-r from-premium-gold to-premium-orange text-black px-2 py-1 rounded-full text-xs font-bold shadow-lg">
-                              Lifetime Validity
-                            </span>
-                          )}
-                        </div>
-                      </motion.div>
-                    ) : (
-                      <motion.div
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={plansVisible ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
-                        transition={{ duration: 0.6, delay: plan.delay + 0.4 }}
-                        className="text-center"
-                      >
-                        <span className={`text-3xl font-black ${plan.popular ? 'gradient-text-premium' : 'text-white'}`}>
-                          {plan.price}
-                        </span>
-                        <div className="text-gray-400 text-sm mt-2">{plan.period}</div>
-                      </motion.div>
+                  <div className="text-center mb-6">
+                    <p className="text-3xl sm:text-4xl font-extrabold text-white mb-2">{plan.price}</p>
+                    {!plan.enterprise && (
+                      <p className="text-gray-400">
+                        <span className="line-through">{plan.originalPrice}</span> for {plan.period}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -387,23 +325,10 @@ const Plans = () => {
                   <h4 className="text-lg font-bold text-white mb-4 text-left drop-shadow-lg">What's included</h4>
                   <div className="space-y-4">
                     {plan.features.map((feature, featureIndex) => (
-                      <motion.div
-                        key={feature}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={plansVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                        transition={{ duration: 0.6, delay: plan.delay + 0.6 + (featureIndex * 0.1) }}
-                        className="flex items-center space-x-3 group/feature"
-                      >
-                        <motion.div
-                          whileHover={{ scale: 1.2, rotate: 360 }}
-                          className="w-5 h-5 rounded-full bg-gradient-to-r from-green-400 to-green-500 flex items-center justify-center flex-shrink-0"
-                        >
-                          <Check className="w-3 h-3 text-white" />
-                        </motion.div>
-                        <span className="text-gray-300 group-hover/feature:text-white transition-colors duration-200 drop-shadow-lg relative z-20">
-                          {feature}
-                        </span>
-                      </motion.div>
+                      <div key={index} className="flex items-start space-x-3">
+                        <Check className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
+                        <span className="text-base sm:text-lg text-gray-200">{feature}</span>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -433,28 +358,20 @@ const Plans = () => {
           ref={testimonialRef}
           initial={{ opacity: 0, y: 50 }}
           animate={testimonialVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center mb-16"
         >
-          <motion.h3
-            initial={{ opacity: 0, y: 30 }}
-            animate={testimonialVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl md:text-4xl font-bold text-white mb-4"
-          >
-            What Our Users Say
-          </motion.h3>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={testimonialVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-gray-400 mb-12 text-lg"
-          >
-            Join thousands of successful developers who landed their dream jobs
-          </motion.p>
+          <h3 className="text-4xl sm:text-5xl font-black text-white mb-4">Loved by Coders Worldwide</h3>
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+            See what our successful students have to say about their journey with TUF Plus.
+          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={testimonialVisible ? "visible" : "hidden"}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          >
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.name}
@@ -491,14 +408,14 @@ const Plans = () => {
                       {testimonial.name.split(' ').map(n => n[0]).join('')}
                     </span>
                   </div>
-                  <div className="text-left">
-                    <div className="text-white font-semibold">{testimonial.name}</div>
-                    <div className="text-premium-gold text-sm">{testimonial.company}</div>
+                  <div className="flex-grow">
+                    <p className="text-white font-bold text-base sm:text-lg">{testimonial.name}</p>
+                    <p className="text-premium-gold text-sm sm:text-base">{testimonial.company}</p>
                   </div>
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

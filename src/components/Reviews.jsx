@@ -227,20 +227,18 @@ const Reviews = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={titleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl md:text-6xl font-black gradient-text-premium mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-black gradient-text-premium mb-6"
           >
-            Dreams Turned Into
-            <br />
-            <span className="text-white">Reality</span>
+            Real Results, Real Stories
           </motion.h2>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={titleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
-            Join thousands of developers who transformed their careers with TUF Plus and landed their dream jobs at top tech companies
+            Thousands of developers have transformed their careers with TUF Plus. Here's what they have to say.
           </motion.p>
         </motion.div>
 
@@ -250,7 +248,7 @@ const Reviews = () => {
           variants={containerVariants}
           initial="hidden"
           animate={reviewsVisible ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24"
         >
           {reviews.map((review, index) => (
             <motion.div
@@ -287,12 +285,9 @@ const Reviews = () => {
                     >
                       {review.name.split(' ').map(n => n[0]).join('')}
                     </motion.div>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="text-lg font-bold text-white group-hover:text-premium-gold transition-colors duration-300 truncate">
-                        {review.name}
-                      </h3>
-                      <p className="text-premium-gold font-semibold truncate">{review.position}</p>
-                      <p className="text-gray-400 text-sm truncate">{review.company}</p>
+                    <div className="flex-grow">
+                      <h4 className="font-bold text-lg sm:text-xl text-white">{review.name}</h4>
+                      <p className="text-sm sm:text-base text-premium-gold">{review.company} - {review.position}</p>
                     </div>
                   </div>
                 </div>
@@ -384,17 +379,9 @@ const Reviews = () => {
                     <stat.icon className="w-8 h-8 text-white" />
                   </motion.div>
                   
-                  <motion.div
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={statsVisible ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 + 0.6 }}
-                    className="text-3xl md:text-4xl font-black gradient-text-premium mb-2 drop-shadow-lg relative z-20"
-                  >
-                    {stat.value}
-                  </motion.div>
-                  
-                  <div className="text-gray-200 font-semibold group-hover:text-white transition-colors duration-300 drop-shadow-md relative z-20">
-                    {stat.label}
+                  <div className="relative z-10">
+                    <p className="text-3xl sm:text-4xl font-black text-white mb-2">{stat.value}</p>
+                    <p className="text-base sm:text-lg text-gray-300">{stat.label}</p>
                   </div>
                 </motion.div>
               ))}

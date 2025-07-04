@@ -91,7 +91,7 @@ const Footer = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-white font-bold text-lg floating-element"
+                className="text-white font-bold text-base sm:text-lg floating-element"
                 style={{ animationDelay: `${index * 0.5}s` }}
               >
                 {achievement}
@@ -116,26 +116,26 @@ const Footer = () => {
                 <div className="w-12 h-12 bg-gradient-to-br from-premium-gold via-premium-amber to-premium-orange rounded-xl flex items-center justify-center shadow-xl">
                   <span className="text-black font-black text-lg">TU</span>
                 </div>
-                <span className="text-white font-black text-3xl">TakeUForward</span>
+                <span className="text-white font-black text-2xl sm:text-3xl">TakeUForward</span>
                 <span className="bg-gradient-to-r from-premium-gold to-premium-orange px-3 py-1 text-sm rounded-full text-black font-bold">PLUS</span>
               </div>
 
-              <p className="text-gray-300 mb-8 leading-relaxed text-lg">
+              <p className="text-gray-300 mb-8 leading-relaxed text-base sm:text-lg">
                 Empowering engineers worldwide with the best interview preparation platform. 
                 Join thousands who've transformed their careers with us.
               </p>
 
               {/* Contact Info */}
               <div className="space-y-4 mb-8">
-                <div className="flex items-center space-x-4 text-gray-300 text-lg">
+                <div className="flex items-center space-x-4 text-gray-300 text-base sm:text-lg">
                   <Mail size={20} className="text-premium-gold" />
                   <span>support@takeuforward.org</span>
                 </div>
-                <div className="flex items-center space-x-4 text-gray-300 text-lg">
+                <div className="flex items-center space-x-4 text-gray-300 text-base sm:text-lg">
                   <Phone size={20} className="text-premium-gold" />
                   <span>+91 98765 43210</span>
                 </div>
-                <div className="flex items-center space-x-4 text-gray-300 text-lg">
+                <div className="flex items-center space-x-4 text-gray-300 text-base sm:text-lg">
                   <MapPin size={20} className="text-premium-gold" />
                   <span>Bangalore, India</span>
                 </div>
@@ -166,13 +166,13 @@ const Footer = () => {
                 transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-white font-bold text-xl mb-6">{category}</h3>
+                <h3 className="text-white font-bold text-lg sm:text-xl mb-6">{category}</h3>
                 <ul className="space-y-4">
                   {links.map((link) => (
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-gray-400 hover:text-premium-gold transition-all duration-300 text-lg font-semibold hover:scale-105 inline-block"
+                        className="text-gray-400 hover:text-premium-gold transition-all duration-300 text-base sm:text-lg font-semibold hover:scale-105 inline-block"
                       >
                         {link.name}
                       </a>
@@ -192,14 +192,14 @@ const Footer = () => {
           viewport={{ once: true }}
           className="py-10 border-t border-premium-gold/30 flex flex-col md:flex-row justify-between items-center"
         >
-          <div className="flex items-center space-x-3 text-gray-300 mb-6 md:mb-0 text-lg font-semibold">
+          <div className="flex items-center space-x-3 text-gray-300 mb-6 md:mb-0 text-base sm:text-lg font-semibold">
             <span>© 2024 TakeUForward. Made with</span>
             <Heart size={20} className="text-premium-gold fill-current animate-pulse" />
             <span>in India</span>
           </div>
 
           <div className="flex items-center space-x-8">
-            <div className="flex items-center space-x-3 text-gray-300 text-lg font-semibold">
+            <div className="flex items-center space-x-3 text-gray-300 text-base sm:text-lg font-semibold">
               <div className="w-3 h-3 rounded-full bg-premium-gold animate-pulse"></div>
               <span>Trusted by 100K+ developers</span>
             </div>

@@ -110,14 +110,14 @@ const Syllabus = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black mb-8 leading-tight">
             Comprehensive{' '}
             <span className="gradient-text-premium relative">
               Learning Tracks
               <div className="absolute -inset-2 bg-gradient-to-r from-premium-gold/20 to-premium-orange/20 rounded-lg blur-xl"></div>
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
             Curated syllabus covering every aspect of technical interviews. 
             From fundamentals to advanced topics, we've got you covered.
           </p>
@@ -156,7 +156,7 @@ const Syllabus = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
-          className="glass-premium rounded-3xl p-10 md:p-16 relative overflow-hidden"
+          className="glass-premium rounded-3xl p-6 sm:p-10 md:p-16 relative overflow-hidden"
         >
           <div className="grid md:grid-cols-2 gap-8 items-start">
             {/* Track Info */}
@@ -167,19 +167,19 @@ const Syllabus = () => {
                   <div className="relative z-10">{tracks[activeTrack].icon}</div>
                 </div>
                 <div>
-                  <h3 className="text-3xl font-black text-white mb-2">{tracks[activeTrack].title}</h3>
-                  <p className="text-gray-300 text-lg">{tracks[activeTrack].description}</p>
+                  <h3 className="text-2xl sm:text-3xl font-black text-white mb-2">{tracks[activeTrack].title}</h3>
+                  <p className="text-gray-300 sm:text-lg">{tracks[activeTrack].description}</p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-1 xs:grid-cols-2 gap-4 mb-6">
                 <div className="flex items-center space-x-3">
                   <Clock className="w-6 h-6 text-premium-gold" />
-                  <span className="text-white font-bold text-lg">{tracks[activeTrack].duration}</span>
+                  <span className="text-white font-bold text-base sm:text-lg">{tracks[activeTrack].duration}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <BookOpen className="w-6 h-6 text-premium-gold" />
-                  <span className="text-white font-bold text-lg">{tracks[activeTrack].problems} Problems</span>
+                  <span className="text-white font-bold text-base sm:text-lg">{tracks[activeTrack].problems} Problems</span>
                 </div>
               </div>
 
@@ -197,7 +197,7 @@ const Syllabus = () => {
 
             {/* Topics List */}
             <div>
-              <h4 className="text-2xl font-bold text-white mb-8">What You'll Learn</h4>
+              <h4 className="text-xl sm:text-2xl font-bold text-white mb-8">What You'll Learn</h4>
               <div className="space-y-3">
                 {tracks[activeTrack].topics.map((topic, index) => (
                   <motion.div
