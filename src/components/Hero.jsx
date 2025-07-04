@@ -92,7 +92,7 @@ const Hero = React.memo(() => {
   return (
     <section 
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-5 sm:pt-10"
       onMouseMove={handleMouseMove}
     >
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-premium-gold/5 via-premium-orange/10 to-premium-red/5 animate-pulse"></div>
@@ -128,7 +128,7 @@ const Hero = React.memo(() => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-flex flex-wrap items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full glass-premium premium-border mb-4 sm:mb-8 relative overflow-hidden text-xs sm:text-sm"
+            className="inline-flex flex-wrap items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full glass-premium premium-border mb-4 sm:mb-8 relative overflow-hidden text-xs sm:text-sm mt-8 sm:mt-12"
           >
             <div className="absolute inset-0 shimmer"></div>
             <Star className="w-4 h-4 sm:w-5 sm:h-5 text-premium-gold mr-2 sm:mr-3 animate-pulse" />
