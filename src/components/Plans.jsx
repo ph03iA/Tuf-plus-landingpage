@@ -325,7 +325,7 @@ const Plans = () => {
                   <h4 className="text-lg font-bold text-white mb-4 text-left drop-shadow-lg">What's included</h4>
                   <div className="space-y-4">
                     {plan.features.map((feature, featureIndex) => (
-                      <div key={index} className="flex items-start space-x-3">
+                      <div key={featureIndex} className="flex items-start space-x-3">
                         <Check className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                         <span className="text-base sm:text-lg text-gray-200">{feature}</span>
                       </div>
