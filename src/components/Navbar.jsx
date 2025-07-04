@@ -5,7 +5,7 @@ import { useSmoothScroll } from '../hooks/useScrollAnimation'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(() => typeof window !== 'undefined' ? window.scrollY > 50 : false)
   const [activeSection, setActiveSection] = useState('hero')
   const { scrollToElement } = useSmoothScroll()
   const lastScrollTime = useRef(0)
